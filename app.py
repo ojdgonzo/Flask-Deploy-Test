@@ -25,7 +25,7 @@ def prediction():
     unpickled = pickle.load(open('linearModel.pkl', 'rb'))
     prediction = unpickled.predict([[bigbudget]])
     # print(prediction)
-    return render_template('prediction.html', prediction = prediction[0][0])
+    return render_template('prediction.html', prediction = prediction[0][0].round(2))
 
 if __name__ == '__main__':
     app.run(debug = True)
